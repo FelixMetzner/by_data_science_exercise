@@ -1,0 +1,55 @@
+repos:
+-   repo: https://github.com/python/black
+    rev: 24.10.0
+    hooks:
+    -   id: black
+        language_version: python3.12
+        args: ["--safe", "-l", "121", "-t", "py312"]
+
+-   repo: https://github.com/pre-commit/pre-commit-hooks
+    rev: v4.5.0
+    hooks:
+    -   id: check-symlinks
+    # -   id: no-commit-to-branch
+    -   id: check-added-large-files
+    -   id: check-case-conflict
+    -   id: detect-private-key
+    -   id: end-of-file-fixer
+        exclude_types: ["jupyter", "c++", "diff"]
+    -   id: trailing-whitespace
+        exclude_types: ["jupyter", "c++", "diff"]
+    -   id: fix-byte-order-marker
+    -   id: check-ast
+    -   id: check-json
+    -   id: check-toml
+    -   id: check-yaml
+    -   id: debug-statements
+    -   id: check-merge-conflict
+
+-   repo: https://github.com/astral-sh/ruff-pre-commit
+    rev: v0.7.0
+    hooks:
+        # Run the linter.
+        -   id: ruff
+            args: [ --fix ]
+        # Run the formatter.
+        -   id: ruff-format
+
+-   repo: https://github.com/PyCQA/flake8
+    rev: 7.1.1
+    hooks:
+    -   id: flake8
+        exclude_types: ["jupyter", "c++", "diff"]
+
+-   repo: https://github.com/pre-commit/mirrors-mypy
+    rev: v1.12.1
+    hooks:
+    -   id: mypy
+        args: ["--namespace-packages", "--explicit-package-bases", "--ignore-missing-imports"]
+
+-   repo: https://github.com/codespell-project/codespell
+    rev: v2.3.0
+    hooks:
+    -   id: codespell
+        args: ["-I", "codespell.txt"]
+        exclude_types: ["jupyter", "c++"]

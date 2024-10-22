@@ -1,0 +1,56 @@
+[project]
+name = "by-data-science-exercise"
+version = "0.1.0"
+description = "Add your description here"
+readme = "README.md"
+license = {text = "MIT"}
+authors = [
+    { name = "Felix Metzner", email = "felixmetzner@outlook.com" }
+]
+
+requires-python = ">=3.12"
+dependencies = [
+    "matplotlib>=3.9.2",
+    "notebook>=7.2.2",
+    "numpy>=2.1.2",
+    "pre-commit>=4.0.1",
+    "pytest>=8.3.3",
+    "scipy>=1.14.1",
+    "torch>=2.4.1",
+]
+
+[project.scripts]
+by-data-science-exercise = "by_data_science_exercise.loss_study:main"
+
+[build-system]
+requires = ["setuptools"]
+build-backend = "setuptools.build_meta"
+
+[tool.uv]
+dev-dependencies = [
+    "ruff>=0.6.9",
+]
+
+[tool.ruff]
+# Same as Black.
+line-length = 121
+indent-width = 4
+
+target-version = "py312"
+
+[tool.ruff.lint]
+# enable E (pycodestyle) and F (pyflakes) linting rules
+select = [
+    # pycodestyle
+    "E",
+    # Pyflakes
+    "F",
+    # pyupgrade
+    "UP",
+    # flake8-bugbear
+    "B",
+    # flake8-simplify
+    "SIM",
+    # isort
+    "I",
+]
