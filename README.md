@@ -8,6 +8,7 @@ As basis to my loss-function definition, I used the publication
 ["Sales Data and the Estimation of Demand" by S. A. Conrad (1976)](https://link.springer.com/article/10.1057/jors.1976.13).
 This text provides a likelihood function definition for the newspaper-vendor problem
 assuming poisson distributed demand and a fixed stock level:
+
 $$ L(m) = \frac{n!}{r_0! r_1! \dots{} r_{N-1}!} \left[ \prod_{j=0}^{N-1} \left( \frac{m^j e{}^{-m}}{j!}\right)^{r_j} \right] \left(\sum_{x-N}^{\infty{}} \frac{m^x e{}^{-m}}{x!} \right)^{n-r}$$
 
 See the paper for all details on the exact definition of the occurring variables.
