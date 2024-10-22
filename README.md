@@ -41,7 +41,7 @@ This mean value $m$ that maximises the likelihood can be found by minimizing the
 using the gradient decent approach provided in the code snippet.
 For this approach, the negative log-likelihood is used directly as loss function.
 
-# Implementation Details
+## Implementation Details
 
 The provided `MeanModel` allows for negative values of the mean predictions.
 To allow for negative values in the above introduced loss function (negative log-likelihood),
@@ -65,7 +65,6 @@ One could also add a term to the loss function to penalize negative mean predict
 
 ## Results
 
-### Default Case poisson rate = 2.0
 I first evaluate the above defined loss function for the default case provided in the code snippet using:
 * true poisson rate = 2.0
 * stock min, max = (0, 10)
